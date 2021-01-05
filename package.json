@@ -1,0 +1,20 @@
+{
+  "name": "bytebank",
+  "version": "1.0.0",
+  "description": "Projeto do ByteBank, Banco Virtual.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lorenzoleite/bytebank.git"
+  },
+  "author": "Lorenzo Leite",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/lorenzoleite/bytebank/issues"
+  },
+  "homepage": "https://github.com/lorenzoleite/bytebank#readme"
+}
