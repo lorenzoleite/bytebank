@@ -1,7 +1,6 @@
 import {Cliente} from "./Cliente.js";
 import {ContaCorrente} from "./ContaCorrente.js";
 import {ContaPoupanca} from "./ContaPoupanca.js";
-import {Conta} from "./Conta.js";
 
 const cliente1 = new Cliente("Ricardo", 11122233309); //instanciando um objeto
 const cliente2 = new Cliente("Alice", 88822233309); //modo de usar o construtor usado na classe Cliente, o nome e cpf só são cadastrados uma vez
@@ -17,8 +16,8 @@ const contaPoupanca = new ContaPoupanca(100, cliente1, 1001);
 //conta2.cliente.cpf = 88822233309;
 
 contaCorrenteRicardo.depositar(500);
-contaCorrenteRicardo.sacar(50);
-contaCorrenteRicardo.transferir(150, conta2); //conta2 é o objeto inteiro da conta, qualquer alteração que fizer dentro do metodo, será refletido no objeto, não é desejável
+contaCorrenteRicardo.transferir(0, conta2); //conta2 é o objeto inteiro da conta, qualquer alteração que fizer dentro do metodo, será refletido no objeto, não é desejável
+contaCorrenteRicardo.sacar(100);
 
 console.log(contaCorrenteRicardo);
 console.log(contaPoupanca);
