@@ -1,4 +1,4 @@
-import {Conta} from "./Conta.js";
+import { Conta } from "./Conta.js";
 
 export class ContaCorrente extends Conta { //extends => herança de classe de uma mãe
     static numeroDeContas = 0; //stributo estático que vai valer pra todas as contas da classe conta corrente
@@ -11,7 +11,7 @@ export class ContaCorrente extends Conta { //extends => herança de classe de um
     }
 
     sacar(valor) {
-        let taxa = 1.1;
+        const taxa = 1.1;
         return this._sacar(valor, taxa); //poderia usar super._sacar()
     }
 }

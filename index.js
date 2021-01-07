@@ -1,6 +1,6 @@
-import {Cliente} from "./Cliente.js";
-import {ContaCorrente} from "./ContaCorrente.js";
-import {ContaPoupanca} from "./ContaPoupanca.js";
+import { Cliente } from "./Cliente.js";
+import { ContaCorrente } from "./ContaCorrente.js";
+import { ContaPoupanca } from "./ContaPoupanca.js";
 
 const cliente1 = new Cliente("Ricardo", 11122233309); //instanciando um objeto
 const cliente2 = new Cliente("Alice", 88822233309); //modo de usar o construtor usado na classe Cliente, o nome e cpf só são cadastrados uma vez

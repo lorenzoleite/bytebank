@@ -1,7 +1,11 @@
-import {Cliente} from "./Cliente.js";
+import { Cliente } from "./Cliente.js";
 
 export class Conta {
     constructor(saldoInicial, cliente, agencia) {
+        if (this.constructor == Conta) {
+            throw new Error("Você não deveria instanciar um objeto do tipo Conta!"); //a classe conta virou uma classe abstrata, não pode ser instanciada, somente herdada
+        }
+
         this._saldo = saldoInicial;
         this._cliente = cliente;
         this._agencia = agencia;
@@ -26,10 +30,8 @@ export class Conta {
         this._saldo += valor;
     }
 
-    sacar(valor) {
-        let taxa = 1;
-        return this._sacar(valor, taxa);
-        
+    sacar(valor) { //o método sacar precisa ser sobrescrito em todas as classes filhas, pois ele sempre terá uma taxa diferente. quando isso acontece, ele torna-se inútil ter coisa dentro e vira abstrato
+        throw new Error("O método Sacar da Conta é abstrato!");
     }
 
     _sacar(valor, taxa) {
