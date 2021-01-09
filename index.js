@@ -1,6 +1,23 @@
 import { Cliente } from "./Cliente.js";
-import { ContaCorrente } from "./ContaCorrente.js";
-import { ContaPoupanca } from "./ContaPoupanca.js";
+import { ContaCorrente } from "./Conta/ContaCorrente.js";
+import { ContaPoupanca } from "./Conta/ContaPoupanca.js";
+import { Gerente } from "./Funcionario/Gerente.js";
+import { Diretor } from "./Funcionario/Diretor.js";
+import { SistemaAutenticacao } from "./SistemaAutenticacao.js";
+
+const diretor = new Diretor("Rodrigo", 10000, 12345678900);
+diretor.cadastrarSenha("123456789");
+
+const gerente = new Gerente("Thiago", 5000, 12345678901);
+gerente.cadastrarSenha("123");
+
+const diretorEstaLogado = SistemaAutenticacao.login(diretor, "123456789");
+const gerenteEstaLogado = SistemaAutenticacao.login(gerente, "123"); //classe SistemaAutenticacao é polimorfismo, pois posso mudar de diretor pra gerente e continua herdando do mesmo lugar
+
+const cliente = new Cliente("Lais", "12345678905", "456");
+const clienteEstaLogado = SistemaAutenticacao.login(cliente, "456");
+
+console.log(gerenteEstaLogado, diretorEstaLogado, clienteEstaLogado);
 
 const cliente1 = new Cliente("Ricardo", 11122233309); //instanciando um objeto
 const cliente2 = new Cliente("Alice", 88822233309); //modo de usar o construtor usado na classe Cliente, o nome e cpf só são cadastrados uma vez
